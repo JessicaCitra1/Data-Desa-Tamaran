@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <div class="form-header">
+    <ion-icon name="person-outline" class="form-illustration"></ion-icon>
+    <h2>Data Penduduk</h2>
+    <p>Berikut adalah daftar data penduduk yang telah tercatat.</p>
+  </div>
+<ion-searchbar
+      [(ngModel)]="searchTerm" 
+      (ionInput)="searchPenduduk()"
+      placeholder="Masukkan NIK penduduk..."
+      search-icon="search-outline">
+    </ion-searchbar>
+  
+  <ion-card class="data-card" *ngFor="let penduduk of penduduks; let i = index">
+    <ion-card-content>
+      <div class="card-header">
+        <div class="name">{{penduduk.Nama}}</div>
+        <ion-button 
+          [id]="'open-action-sheet-' + i" 
+          fill="clear" 
+          size="small" 
+          shape="round">
+          <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+        </ion-button>
+        
+        <ion-action-sheet 
+          [trigger]="'open-action-sheet-' + i" 
+          header="Pilih Aksi"
+          subHeader="{{penduduk.Nama}}"
+          [buttons]="getActionButtons(penduduk)">
+        </ion-action-sheet>
+      </div>
+      <div class="info-row">
+        <ion-icon name="card-outline"></ion-icon>
+        <span>{{penduduk.NIK}}</span>
+      </div>
+      <div class="info-row">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <span>{{penduduk.Tempat_TanggalLahir}}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

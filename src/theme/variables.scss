@@ -1,0 +1,21 @@
+:root {
+  /* Warna utama: Ungu RGBA */
+  --ion-color-primary: rgba(58, 45, 116, 1);
+  --ion-color-primary-rgb: 58, 45, 116;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: rgba(50, 39, 102, 1);
+  --ion-color-primary-tint: rgba(68, 53, 126, 1);
+
+  /* Warna sekunder */
+  --ion-color-secondary: rgba(98, 85, 156, 1);
+  --ion-color-secondary-rgb: 98, 85, 156;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: rgba(88, 76, 140, 1);
+  --ion-color-secondary-tint: rgba(108, 94, 170, 1);
+
+  /* Latar belakang aplikasi */
+  --ion-background-color: rgba(240, 240, 250, 1); /* Latar belakang putih keunguan */
+  --ion-background-color-rgb: 240, 240, 2
+}

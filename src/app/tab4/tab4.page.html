@@ -1,0 +1,139 @@
+<ion-content [fullscreen]="true">
+  <div class="stats-header">
+    <ion-icon name="stats-chart-outline" class="stats-illustration"></ion-icon>
+    <h2>Statistik Penduduk</h2>
+    <p>Data statistik penduduk Desa Tamaran<br>berdasarkan kategori</p>
+  </div>
+
+  <div class="stats-container">
+    <!-- Total Penduduk -->
+    <div class="stats-card main-stats">
+      <div class="stats-icon-wrapper">
+        <ion-icon name="people-outline" class="stats-icon primary"></ion-icon>
+      </div>
+      <div class="stats-content">
+        <h3>Total Penduduk</h3>
+        <p class="stats-number">{{ totalPenduduk }}</p>
+        <span class="stats-label">Jiwa</span>
+      </div>
+    </div>
+
+    <!-- Statistik Jenis Kelamin -->
+    <div class="stats-section">
+      <h4 class="section-title">Berdasarkan Jenis Kelamin</h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <div class="stats-card">
+              <div class="stats-icon-wrapper">
+                <ion-icon name="male-outline" class="stats-icon male"></ion-icon>
+              </div>
+              <div class="stats-content">
+                <h5>Laki-Laki</h5>
+                <p class="stats-number">{{ totalLakiLaki }}</p>
+                <span class="stats-label">Jiwa</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="stats-card">
+              <div class="stats-icon-wrapper">
+                <ion-icon name="female-outline" class="stats-icon female"></ion-icon>
+              </div>
+              <div class="stats-content">
+                <h5>Perempuan</h5>
+                <p class="stats-number">{{ totalPerempuan }}</p>
+                <span class="stats-label">Jiwa</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Total Keluarga -->
+    <div class="stats-card family-stats">
+      <div class="stats-icon-wrapper">
+        <ion-icon name="home-outline" class="stats-icon family"></ion-icon>
+      </div>
+      <div class="stats-content">
+        <h3>Total Keluarga</h3>
+        <p class="stats-number">{{ totalKeluarga }}</p>
+        <span class="stats-label">Kepala Keluarga</span>
+      </div>
+    </div>
+
+    <!-- Statistik Kelompok Umur -->
+    <div class="stats-section">
+      <h4 class="section-title">Berdasarkan Kelompok Umur</h4>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <div class="stats-card">
+              <div class="stats-icon-wrapper">
+                <ion-icon name="happy-outline" class="stats-icon children"></ion-icon>
+              </div>
+              <div class="stats-content">
+                <h5>Anak-Anak</h5>
+                <p class="stats-number">{{ totalAnak }}</p>
+                <span class="stats-label">0-12 Tahun</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="stats-card">
+              <div class="stats-icon-wrapper">
+                <ion-icon name="school-outline" class="stats-icon teen"></ion-icon>
+              </div>
+              <div class="stats-content">
+                <h5>Remaja</h5>
+                <p class="stats-number">{{ totalRemaja }}</p>
+                <span class="stats-label">13-17 Tahun</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <div class="stats-card">
+              <div class="stats-icon-wrapper">
+                <ion-icon name="briefcase-outline" class="stats-icon adult"></ion-icon>
+              </div>
+              <div class="stats-content">
+                <h5>Dewasa</h5>
+                <p class="stats-number">{{ totalDewasa }}</p>
+                <span class="stats-label">18-59 Tahun</span>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div class="stats-card">
+              <div class="stats-icon-wrapper">
+                <ion-icon name="glasses-outline" class="stats-icon elderly"></ion-icon>
+              </div>
+              <div class="stats-content">
+                <h5>Lansia</h5>
+                <p class="stats-number">{{ totalLansia }}</p>
+                <span class="stats-label">60+ Tahun</span>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Refresh Button -->
+    <div class="refresh-section">
+      <ion-button expand="block" fill="outline" (click)="refreshData()">
+        <ion-icon name="refresh-outline" slot="start"></ion-icon>
+        Refresh Data
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="isLoading" class="loading-overlay">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Memuat data statistik...</p>
+  </div>
+</ion-content>

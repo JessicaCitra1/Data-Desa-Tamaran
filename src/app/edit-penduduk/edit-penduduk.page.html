@@ -1,0 +1,190 @@
+<ion-content [fullscreen]="true">
+  <div class="form-header">
+    <ion-icon name="create-outline" class="form-illustration"></ion-icon>
+    <h2>Edit Data Penduduk</h2>
+    <p>Silakan ubah data yang diperlukan<br>dan simpan perubahan.</p>
+  </div>
+
+  <div class="form-card" *ngIf="pendudukData">
+    <ion-list>
+      <ion-item>
+        <ion-input 
+         label="NIK" 
+         labelPlacement="floating" 
+         type="number"
+         [(ngModel)]="pendudukData.NIK"
+         [readonly]="!isEditMode">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+         label="Nama"
+         labelPlacement="floating"
+         placeholder="Masukkan Nama"
+         [(ngModel)]="pendudukData.Nama"
+         [readonly]="!isEditMode">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+         label="Tempat dan Tanggal lahir"
+         labelPlacement="floating"
+         placeholder="Masukkan Tempat dan Tanggal lahir"
+         [(ngModel)]="pendudukData.Tempat_TanggalLahir"
+         [readonly]="!isEditMode">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input 
+         type="number" 
+         label="Umur" 
+         labelPlacement="floating" 
+         placeholder="Masukkan Umur"
+         [(ngModel)]="pendudukData.Umur"
+         [readonly]="!isEditMode">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select 
+         label="Jenis Kelamin" 
+         labelPlacement="floating"
+         [(ngModel)]="pendudukData.Jenis_Kelamin"
+         [disabled]="!isEditMode">
+          <ion-select-option value="LAKI-LAKI">Laki-Laki</ion-select-option>
+          <ion-select-option value="PEREMPUAN">Perempuan</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select 
+         label="Golongan Darah" 
+         labelPlacement="floating"
+         [(ngModel)]="pendudukData.Golongan_Darah"
+         [disabled]="!isEditMode">
+          <ion-select-option value="A">A</ion-select-option>
+          <ion-select-option value="B">B</ion-select-option>
+          <ion-select-option value="AB">AB</ion-select-option>
+          <ion-select-option value="O">O</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input 
+         label="Alamat" 
+         labelPlacement="floating" 
+         placeholder="Masukkan Alamat"
+         [(ngModel)]="pendudukData.Alamat"
+         [readonly]="!isEditMode">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select 
+         label-placement="floating" 
+         placeholder="Agama" 
+         label="Agama"
+         [(ngModel)]="pendudukData.Agama"
+         [disabled]="!isEditMode">
+          <ion-select-option value="ISLAM">ISLAM</ion-select-option>
+          <ion-select-option value="PROTESTAN">PROTESTAN</ion-select-option>
+          <ion-select-option value="KATOLIK">KATOLIK</ion-select-option>
+          <ion-select-option value="HINDU">HINDU</ion-select-option>
+          <ion-select-option value="BUDHA">BUDHA</ion-select-option>
+          <ion-select-option value="KHONGHUCU">KHONGHUCU</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select 
+         label-placement="floating" 
+         label="Status Menikah" 
+         placeholder="Status Menikah"
+         [(ngModel)]="pendudukData.Status_Menikah"
+         [disabled]="!isEditMode">
+          <ion-select-option value="BELUM">Belum</ion-select-option>
+          <ion-select-option value="SUDAH">Sudah</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input 
+         label="Pekerjaan" 
+         labelPlacement="floating"
+         placeholder="Masukkan Pekerjaan"
+         [(ngModel)]="pendudukData.Pekerjaan"
+         [readonly]="!isEditMode">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select 
+         label="Kepala Keluarga" 
+         labelPlacement="floating"
+         [(ngModel)]="pendudukData.Kepala_Keluarga"
+         [disabled]="!isEditMode">
+          <ion-select-option value="IYA">Iya</ion-select-option>
+          <ion-select-option value="TIDAK">Tidak</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+         label="No HP"
+         labelPlacement="floating"
+         placeholder="Masukkan No HP"
+         [(ngModel)]="pendudukData.No_HP"
+         [readonly]="!isEditMode">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="tombol-container">
+      <div *ngIf="!isEditMode" class="edit-buttons">
+        <ion-button 
+          *ngIf="!isEditMode" 
+          expand="block" 
+          color="primary" 
+          (click)="toggleEditMode()">
+          <ion-icon name="create-outline" slot="start"></ion-icon>
+          Edit Data
+        </ion-button>
+        <ion-button 
+          expand="block" 
+          fill="outline" 
+          color="medium" 
+          href="tabs/tab3">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          Kembali
+        </ion-button>
+      </div>
+
+      <div *ngIf="isEditMode" class="edit-buttons">
+        <ion-button 
+          expand="block" 
+          color="primary" 
+          (click)="saveChanges()">
+          <ion-icon name="save-outline" slot="start"></ion-icon>
+          Simpan Perubahan
+        </ion-button>
+        <ion-button 
+          expand="block" 
+          fill="outline" 
+          color="medium" 
+          (click)="cancelEdit()">
+          <ion-icon name="close-outline" slot="start"></ion-icon>
+          Batal
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="!pendudukData" class="loading-container">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Memuat data...</p>
+  </div>
+</ion-content>

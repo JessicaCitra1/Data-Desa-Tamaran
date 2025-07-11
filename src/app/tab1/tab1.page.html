@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Beranda</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Welcome Section -->
+  <div class="welcome-section gradient-bg">
+    <img src="assets/welcome.png" alt="Welcome" class="welcome-image shadow-img" />
+    <h2>Selamat Datang di Data Desa Tamaran!</h2>
+    <p>
+      Aplikasi ini dirancang untuk membantu perangkat desa dalam mengelola dan melihat data penduduk dengan mudah.
+    </p>
+  </div>
+
+  <!-- Guide Section -->
+  <div class="guide-container">
+    <ion-grid class="guide-grid">
+      <ion-row justify-content-center align-items-stretch>
+        <ion-col size="6" size-md="4">
+          <ion-card class="guide-card" button href="tabs/tab2">
+            <ion-card-content>
+              <ion-icon name="person-add-outline" class="guide-icon"></ion-icon>
+              <h3>Tambah<br>Data</h3>
+            </ion-card-content>
+          </ion-card> 
+        </ion-col>
+        <ion-col size="6" size-md="4">
+          <ion-card class="guide-card" button href="tabs/tab3">
+            <ion-card-content>
+              <ion-icon name="person-outline" class="guide-icon"></ion-icon>
+              <h3>Lihat<br>Data</h3>
+            </ion-card-content>
+          </ion-card> 
+        </ion-col>
+        <ion-col size="12" size-md="4">
+          <ion-card class="guide-card" button href="tabs/tab4">
+            <ion-card-content>
+              <ion-icon name="stats-chart-outline" class="guide-icon"></ion-icon>
+              <h3>Statistik Penduduk</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

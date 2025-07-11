@@ -1,0 +1,139 @@
+<ion-content [fullscreen]="true">
+  <div class="form-header">
+    <ion-icon name="person-add-outline" class="form-illustration"></ion-icon>
+    <h2>Formulir Data Penduduk</h2>
+    <p>Silakan isi data penduduk dengan lengkap<br>dan benar.</p>
+  </div>
+
+  <div class="form-card">
+    <ion-list>
+
+      <ion-item>
+        <ion-input
+          label="NIK"
+          labelPlacement="floating"
+          type="number"
+          [(ngModel)]="NIK">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Nama"
+          labelPlacement="floating"
+          placeholder="Masukkan Nama"
+          [(ngModel)]="Nama">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Tempat dan Tanggal Lahir"
+          labelPlacement="floating"
+          placeholder="Masukkan Tempat dan Tanggal Lahir"
+          [(ngModel)]="Tempat_TanggalLahir">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          type="number"
+          label="Umur"
+          labelPlacement="floating"
+          placeholder="Masukkan Umur"
+          [(ngModel)]="Umur">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Jenis Kelamin"
+          labelPlacement="floating"
+          [(ngModel)]="Jenis_Kelamin">
+          <ion-select-option value="LAKI-LAKI">Laki-Laki</ion-select-option>
+          <ion-select-option value="PEREMPUAN">Perempuan</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Golongan Darah"
+          labelPlacement="floating"
+          [(ngModel)]="Golongan_Darah">
+          <ion-select-option value="A">A</ion-select-option>
+          <ion-select-option value="B">B</ion-select-option>
+          <ion-select-option value="AB">AB</ion-select-option>
+          <ion-select-option value="O">O</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Alamat"
+          labelPlacement="floating"
+          placeholder="Masukkan Alamat"
+          [(ngModel)]="Alamat">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Agama"
+          labelPlacement="floating"
+          placeholder="Pilih Agama"
+          [(ngModel)]="Agama">
+          <ion-select-option value="ISLAM">Islam</ion-select-option>
+          <ion-select-option value="PROTESTAN">Protestan</ion-select-option>
+          <ion-select-option value="KATOLIK">Katolik</ion-select-option>
+          <ion-select-option value="HINDU">Hindu</ion-select-option>
+          <ion-select-option value="BUDHA">Budha</ion-select-option>
+          <ion-select-option value="KHONGHUCU">Khonghucu</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Status Menikah"
+          labelPlacement="floating"
+          placeholder="Pilih Status"
+          [(ngModel)]="Status_Menikah">
+          <ion-select-option value="BELUM">Belum</ion-select-option>
+          <ion-select-option value="SUDAH">Sudah</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Pekerjaan"
+          labelPlacement="floating"
+          placeholder="Masukkan Pekerjaan"
+          [(ngModel)]="Pekerjaan">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Kepala Keluarga"
+          labelPlacement="floating"
+          [(ngModel)]="Kepala_Keluarga">
+          <ion-select-option value="IYA">Iya</ion-select-option>
+          <ion-select-option value="TIDAK">Tidak</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="No HP"
+          labelPlacement="floating"
+          placeholder="Masukkan No HP"
+          [(ngModel)]="No_HP">
+        </ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="tombol">
+      <ion-button expand="block" color="primary" (click)="addRegister()">Simpan</ion-button>
+    </div>
+  </div>
+</ion-content>
